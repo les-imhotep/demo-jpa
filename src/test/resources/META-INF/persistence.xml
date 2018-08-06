@@ -10,8 +10,10 @@
 
 		<!-- Choix de l'implémentation JPA -->
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<class>dev.jpa.entites.Client</class>
+		<class>dev.jpa.entites.Customer</class>
 		<class>dev.jpa.entites.Livre</class>
+		<class>dev.jpa.entites.Client</class>
+		<class>dev.jpa.entites.Emprunt</class>
 
 		<properties>
 			<!-- informations de connexion à la base de données -->

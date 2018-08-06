@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 
 import org.junit.Test;
 
-import dev.jpa.entites.Client;
+import dev.jpa.entites.Customer;
 
 public class InitialisationTest {
 
@@ -21,7 +21,7 @@ public class InitialisationTest {
 		// => L'usine fournit une instance d'EntityManager (session de travail)
 		EntityManager em = emf.createEntityManager();
 
-		Client client = em.find(Client.class, 4L);
+		Customer client = em.find(Customer.class, 4L);
 
 		System.out.println(client);
 

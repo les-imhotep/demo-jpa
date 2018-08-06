@@ -2,34 +2,32 @@ package dev.jpa.entites;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-// @Entity => déclare qu'une classe Java correspond à une table en base de données
 @Entity
-// @Table.name => spécifie le nom de la table
-@Table(name = "CUSTOMER")
+@Table(name = "CLIENT")
 public class Client {
 
-	@Id // déclare à JPA quel champ représente la clé primaire
-	@Column(name = "ID") // mapping champ <> colonne
-	private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID")
+	private Integer id;
 
-	@Column(name = "EMAIL")
-	private String email;
-
-	@Column(name = "LAST_NAME")
+	@Column(name = "NOM")
 	private String nom;
 
-	@Column(name = "FIRST_NAME")
+	@Column(name = "PRENOM")
 	private String prenom;
 
-	public String getEmail() {
-		return email;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getNom() {
@@ -48,17 +46,9 @@ public class Client {
 		this.prenom = prenom;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
 	@Override
 	public String toString() {
-		return "Client [id=" + id + ", email=" + email + ", nom=" + nom + ", prenom=" + prenom + "]";
+		return "Client [id=" + id + ", nom=" + nom + ", prenom=" + prenom + "]";
 	}
 
 }
